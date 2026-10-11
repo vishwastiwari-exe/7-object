@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let Product = {
+            name: 'Laptop',
+            price: 50000,
+            brand: 'HP',
+            'delivery-time': 'Same days',
+            // displayDetails: function(){
+            //     return `Name: ${this.name} Price: ${this.price} Brand: ${this.brand}`;
+            // }
+        };
+        
+        // console.log(Product.displayDetails());
+        // console.log(Product.name);
+        // console.log(Product.price);
+        // console.log(Product.brand);
+
+        // let copyProduct = Product;
+        // console.log(Product);
+        // copyProduct.name = 'Mobile';
+        // console.log(Product);
+        // copyProduct.price = 20000;
+        // console.log(Product);
+
+        // conslole.log(Product['delivery-time']);
+
+
+        let obj = {
+            message: 'good job',
+            status: 'complete',
+        };
+        console.log(obj);
+        let {message, status} = obj;
+        console.log(message);
+        console.log(status);
+
+
+        function isIdenticalProduct(Product1, Product2)
+        {
+            if (typeof Product1 !== 'object' || typeof Product2 !== 'object'){
+                return false;
+            }
+
+            if (Product1 == Product2){
+            return true;
+            }
+            if (Product1.name === Product2.name && Product1.price === Product2.price && Product1.brand === Product2.brand){
+            return true;
+            } else {
+            return false;
+            }
+       }
+
+        let Product2 = {
+            name: 'Laptop',
+            price: 40000,
+            brand: 'HP',
+            'delivery-time': 'Same days',
+        };
+        
+        let Product3 = {
+            name: 'Laptop',
+            price: 40000,
+            brand: 'HP',
+            'delivery-time': 'Same days',
+        };
+
+        console.log(isIdenticalProduct(Product, ''));
+        console.log(isIdenticalProduct(Product, Product));
+        console.log(isIdenticalProduct(Product3, Product2));
+        console.log(isIdenticalProduct(Product2, Product3));
+    </script>
+</body>
+</html>
